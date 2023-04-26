@@ -1,0 +1,21 @@
+version: "3.2"
+services:
+  php:
+    build: './php/'
+    networks:
+      - mre
+    volumes:
+      - './src/:/var/www/html/'
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+    networks:
+      - mre
+    ports:
+      - "80:80"
+    volumes:
+      - './src/:/var/www/html/'
+networks:
+  mre:
+    driver: bridge
