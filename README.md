@@ -10,7 +10,7 @@ docker-compose -f mysql.yaml up
 
 ## build up postgres.yaml
 
--cd postgres/
+- cd postgres/
 
 ```bash
 
