@@ -1,0 +1,13 @@
+{
+  "name": "rebuild-opnicare",
+   "version": "1.0.0",
+   "license": "MIT",
+   "scripts": {
+      "dev": ""
+   },
+
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49"
+  }
+}
