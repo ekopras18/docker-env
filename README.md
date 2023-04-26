@@ -1,4 +1,4 @@
-## build up mysql.yaml
+## Up mysql.yaml
 
 - cd mysql/
 
@@ -8,7 +8,7 @@ docker-compose -f mysql.yaml up
 
 ```
 
-## build up postgres.yaml
+## Up postgres.yaml
 
 - cd postgres/
 
@@ -18,7 +18,7 @@ docker-compose -f postgres.yaml up
 
 ```
 
-## docker-compose
+## Up server
 
 - cd server/
 
@@ -28,10 +28,14 @@ docker-compose up -d
 
 ```
 
-## exec
+## Exec
 
 ```bash
 
 docker exec -it name_container sh
 
 ```
+
+## Source Project 
+
+- server/src/
