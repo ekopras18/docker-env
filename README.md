@@ -1,26 +1,17 @@
-## Up mysql.yaml
+## Build db.yaml
 
-- cd mysql/
-
-```bash
-
-docker-compose -f mysql.yaml up
-
-```
-
-## Up postgres.yaml
-
-- cd postgres/
+- cd database/
 
 ```bash
 
-docker-compose -f postgres.yaml up
+docker-compose -f db.yaml up
 
 ```
+```
 
-## Up server
+## Up Apache
 
-- cd server/
+- cd apache/
 
 ```bash
 
@@ -28,14 +19,10 @@ docker-compose up -d
 
 ```
 
-## Exec
+## Source Project
 
-```bash
+- apache/src/ (for php apps standalone)
 
-docker exec -it name_container sh
+and 
 
-```
-
-## Source Project 
-
-- server/src/
+- src/ (for laravel apps) 

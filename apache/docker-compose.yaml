@@ -2,12 +2,14 @@ version: "3.2"
 services:
   php:
     build: './php/'
+    container_name: php
     networks:
       - mre
     volumes:
       - './src/:/var/www/html/'
   apache:
-    build: './apache/'
+    build: './app/'
+    container_name: apache
     depends_on:
       - php
     networks:
