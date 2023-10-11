@@ -62,6 +62,12 @@
 sudo docker exec -it <nama_container> /bin/bash
 ```
 
+## Stop Container
+
+```bash
+sudo docker stop <nama_container>
+```
+
 ## cek
 
 ```bash
