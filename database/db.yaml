@@ -1,29 +1,15 @@
 version: "3.2"
 services:
-  # mysql:
-  #   image: mysql:8
-  #   container_name: mysql
-  #   command: mysqld --sql_mode="ALLOW_INVALID_DATES" --default-authentication-plugin=mysql_native_password
-  #   restart: always
-  #   networks:
-  #     - mre
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: root
-  #   volumes:
-  #     - $HOME/database/mysql:/var/lib/mysql
-  #   ports:
-  #     - 3306:3306
-
   mariadb:
-    image: mariadb:latest
+    image: mariadb:10.11
     container_name: mariadb
     restart: unless-stopped # NOTE: for production use, you should use "always"
     networks:
       - mre
     environment:
-      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: 5slD9ziHCCwWSv1LX1jN
       MARIADB_USER: root
-      MARIADB_PASSWORD: root
+      MARIADB_PASSWORD: 5slD9ziHCCwWSv1LX1jN
     volumes:
       - $HOME/database/mariadb:/var/lib/mysql
       - ./mariadb/50-server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf
@@ -31,14 +17,14 @@ services:
       - 3306:3306
     
   postgres:
-    image: postgres
+    image: postgres:15.4
     container_name: postgres
-    restart: unless-stopped # NOTE: for production use, you should use "always"
+    # restart: unless-stopped # NOTE: for production use, you should use "always"
     networks:
       - mre
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 5slD9ziHCCwWSv1LX1jN
     volumes:
       - $HOME/database/postgres:/var/lib/postgresql/data
     ports:
@@ -47,15 +33,11 @@ services:
   redis:
     image: redis:latest
     container_name: redis
-    restart: unless-stopped # NOTE: for production use, you should use "always"
+    # restart: unless-stopped # NOTE: for production use, you should use "always"
     networks:
       - mre
     ports:
       - 6379:6379
-
-volumes:
-  mariadb:
-  postgres:
 
 networks:
   mre:

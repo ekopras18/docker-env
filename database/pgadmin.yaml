@@ -1,0 +1,18 @@
+version: '3'
+services:
+  pgadmin:
+    image: dpage/pgadmin4:7.4
+    container_name: pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ekopras@email.com
+      PGADMIN_DEFAULT_PASSWORD: ekopras
+    ports:
+      - "5050:80"
+    networks:
+      - mre
+    volumes:
+      - $HOME/database/pgadmin:/var/lib/pgadmin
+
+networks:
+  mre:
+    external: true
