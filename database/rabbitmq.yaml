@@ -12,6 +12,12 @@ services:
       RABBITMQ_DEFAULT_PASS: optima
     volumes:
       - $HOME/database/rabbitmq:/var/lib/rabbitmq
+    networks:
+      - optima
 
 volumes:
   rabbitmq:
+
+networks:
+  optima:
+    external: true
