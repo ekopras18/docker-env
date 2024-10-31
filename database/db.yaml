@@ -16,28 +16,28 @@ services:
     ports:
       - 3306:3306
     
-  postgres:
-    image: postgres:15.4
-    container_name: postgres
-    # restart: unless-stopped # NOTE: for production use, you should use "always"
-    networks:
-      - mre
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 5slD9ziHCCwWSv1LX1jN
-    volumes:
-      - $HOME/database/postgres:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+  # postgres:
+  #   image: postgres:15.4
+  #   container_name: postgres
+  #   # restart: unless-stopped # NOTE: for production use, you should use "always"
+  #   networks:
+  #     - mre
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: 5slD9ziHCCwWSv1LX1jN
+  #   volumes:
+  #     - $HOME/database/postgres:/var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
 
-  redis:
-    image: redis:latest
-    container_name: redis
-    # restart: unless-stopped # NOTE: for production use, you should use "always"
-    networks:
-      - mre
-    ports:
-      - 6379:6379
+  # redis:
+  #   image: redis:latest
+  #   container_name: redis
+  #   # restart: unless-stopped # NOTE: for production use, you should use "always"
+  #   networks:
+  #     - mre
+  #   ports:
+  #     - 6379:6379
 
 networks:
   mre:
